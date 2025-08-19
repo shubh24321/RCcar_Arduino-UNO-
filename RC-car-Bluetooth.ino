@@ -5,16 +5,15 @@ const int IN3 = 9;   // Motor 2 Forward
 const int IN4 = 8;   // Motor 2 Backward
 
 void setup() {
-  // Initialize motor control pins as outputs
+  
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
   
-  // Initialize serial communication for Bluetooth
+  for Bluetooth
   Serial.begin(9600);
-  
-  // Stop all motors initially
+
   allStop();
 }
 
@@ -42,29 +41,7 @@ void loop() {
       case 'S': // Stop
         allStop();
         break;
-      // Individual motor controls
-      case '1': // Motor 1 forward
-        motor1Forward();
-        motor2Stop();
-        break;
-      case '2': // Motor 1 backward
-        motor1Backward();
-        motor2Stop();
-        break;
-      case '3': // Motor 1 stop
-        motor1Stop();
-        break;
-      case '4': // Motor 2 forward
-        motor2Forward();
-        motor1Stop();
-        break;
-      case '5': // Motor 2 backward
-        motor2Backward();
-        motor1Stop();
-        break;
-      case '6': // Motor 2 stop
-        motor2Stop();
-        break;
+      
     }
   }
 }
