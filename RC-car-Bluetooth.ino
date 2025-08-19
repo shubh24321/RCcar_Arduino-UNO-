@@ -1,8 +1,8 @@
-// Motor control pins
-const int IN1 = 11;  // Motor 1 Forward
-const int IN2 = 10;  // Motor 1 Backward
-const int IN3 = 9;   // Motor 2 Forward
-const int IN4 = 8;   // Motor 2 Backward
+
+const int IN1 = 11;  
+const int IN2 = 10;  
+const int IN3 = 9;   
+const int IN4 = 8;   
 
 void setup() {
   
@@ -22,23 +22,23 @@ void loop() {
     char command = Serial.read();
     
     switch(command) {
-      case 'F': // Forward (both motors forward)
+      case 'F': 
         motor1Forward();
         motor2Forward();
         break;
-      case 'B': // Backward (both motors backward)
+      case 'B': 
         motor1Backward();
         motor2Backward();
         break;
-      case 'L': // Left turn (right motor forward, left motor backward)
-        motor1Backward();  // Left motor backward
-        motor2Forward();   // Right motor forward
+      case 'L':
+        motor1Backward(); 
+        motor2Forward();   
         break;
-      case 'R': // Right turn (left motor forward, right motor backward)
-        motor1Forward();   // Left motor forward
-        motor2Backward();  // Right motor backward
+      case 'R':
+        motor1Forward();   
+        motor2Backward();  
         break;
-      case 'S': // Stop
+      case 'S':
         allStop();
         break;
       
